@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Custom Records" />
+        <meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media & Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+        <meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+        <link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+        <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/screen.css" />
+        <link rel="stylesheet" type="text/css" href="css/style2.css">
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <![endif]-->
+
+        <title>Black Diamonds – They are dead</title>
+    </head>
+
+    <body>
+		<div id="cache" class="active"><div></div></div>
+
+        <a href="../../index.html" id="customRecords" class="invert"><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+        <div id="generator">
+            <a href="#" id="toggleDescription" class="invert"></a>
+
+            <img src="img/info_test.png" id="info">
+            <img src="img/info_test_2.png" id="info_2">
+            <img src="img/fleche.png" id="fleche">
+            <img src="img/fleche2.png" id="fleche2">
+
+            <div id="container">
+                <a href="#" class="buy"></a>
+                <input id="rangeMask0" type="range" min="0" max="90">
+                <input id="rangeMask2" type="range" min="180" max="270">
+                <input id="rangeMask3" type="range" min="270" max="360">
+                <input id="rangeMask4" type="range" min="90" max="180">
+                <input id="rangeMask5" type="range" min="45" max="135">
+                <input id="rangeMask6" type="range" min="-45" max="45">
+                <input id="rangeMask7" type="range" min="225" max="315">
+                <input id="rangeMask8" type="range" min="135" max="225">
+
+                <svg id="svg_main" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="600">
+                    <defs>
+                        <mask id="mask">
+                            <rect width="600" height="600" fill="black"/>
+                            <polygon id="maskpoly_0" points="0,0 300,300 0,300" fill="white"  />
+                        </mask>
+                        <mask id="mask2">
+                            <rect width="600" height="600" fill="black"/>
+                            <polygon id="maskpoly_2" points="0,300 300,300 0,600" fill="white"  />
+                        </mask>
+                        <mask id="mask3">
+                            <rect width="600" height="600" fill="black"/>
+                            <polygon id="maskpoly_3" points="0,600 300,300 300,600" fill="white"  />
+                        </mask>
+                        <mask id="mask4">
+                            <rect width="600" height="600" fill="black"/>
+                            <polygon id="maskpoly_4" points="300,600 300,300 600,600" fill="white"  />
+                        </mask>
+                        <mask id="mask5">
+                            <rect width="600" height="600" fill="black"/>
+                            <polygon id="maskpoly_5" points="600,600 300,300 600,300" fill="white"  />
+                        </mask>
+                        <mask id="mask6">
+                            <rect width="600" height="600" fill="black"/>
+                            <polygon id="maskpoly_6" points="600,300 300,300 600,0" fill="white"  />
+                        </mask>
+                        <mask id="mask7">
+                            <rect width="600" height="600" fill="black"/>
+                            <polygon id="maskpoly_7" points="600,0 300,300 300,0" fill="white"  />
+                        </mask>
+                        <mask id="mask8">
+                            <rect width="600" height="600" fill="black"/>
+                            <polygon id="maskpoly_8" points="300,0 300,300 0,0" fill="white"  />
+                        </mask>
+                    </defs>
+                    <image xlink:href="img/cover2.png" width="600" height="600" mask="url(#mask)"></image>
+                    <image xlink:href="img/cover6.png" width="600" height="600"  mask="url(#mask2)"></image>
+                    <image xlink:href="img/cover8.png" width="600" height="600"  mask="url(#mask3)"></image>
+                    <image xlink:href="img/cover7.png" width="600" height="600"  mask="url(#mask4)"></image>
+                    <image xlink:href="img/cover1.png" width="600" height="600"  mask="url(#mask5)"></image>
+                    <image xlink:href="img/cover4.png" width="600" height="600"  mask="url(#mask6)"></image>
+                    <image xlink:href="img/cover5.png" width="600" height="600"  mask="url(#mask7)"></image>
+                    <image id="bg" xlink:href="img/cover3.png" width="600" height="600" mask="url(#mask8)"></image>
+                    <image id="logo" xlink:href="img/title_2.png" width="160" height="160"></image>
+                    <image id="titre" xlink:href="img/title_3.png" width="600" height="600" ></image>
+                </svg>
+            </div>
+        </div>
+
+        <div id="description">
+            <blockquote>
+                We eat crickets,
+                In the future
+                <small>—UMO</small>
+            </blockquote>
+            <div class="album">
+                They are dead
+            </div>
+            <div class="artist">
+                Black Diamonds
+            </div>
+            <div class="informations">
+                10.06.2016<br />
+                2LP vinyl, Digital<br />
+                CR001<br />
+            </div>
+            <div class="tracklist">
+                A1. Introspection<br />
+                A2. Explosion of fullness<br />
+                A3. 3<br />
+                <hr />
+                B1. I Think It Is Beautiful That You Are 256 Colors Too<br />
+                B2. Cricket Kabobs<br />
+                <hr />
+                C1. Moment of lust<br />
+                C2. Melody For Color Spectrum<br />
+                C3. I love you when you die<br />
+                <hr />
+                D1. !eiD
+            </div>
+            <div class="gallery">
+                <img src="capture2/capture0.png" />
+                <img src="capture2/capture1.png" />
+                <img src="capture2/capture2.png" />
+                <img src="capture2/capture3.png" />
+                <img src="capture2/capture4.png" />
+                <img src="capture2/capture5.png" />
+                <img src="capture2/capture6.png" />
+                <img src="capture2/capture7.png" />
+                <img src="capture2/capture8.png" />
+            </div>
+            <div class="cover">
+                ECAL/Adrien Kaeser
+            </div>
+            <div class="production">
+                <img src="imgs/custom_records_white.png" />
+            </div>
+        </div>
+
+        <script src="js/sketch.js"></script>
+
+        <!-- PAS TOUCHE -->
+
+        <script>
+            setTimeout(function() {
+                document.getElementById('cache').classList.remove('active');
+            }, 2000);
+
+			var generator         = document.getElementById('generator'),
+                toggleDescription = document.getElementById('toggleDescription');
+
+            toggleDescription.addEventListener('click', function(e) {
+                e.stopPropagation();
+                document.body.classList.toggle('descriptionOpened');
+            }, false);
+
+            generator.addEventListener('click', function(e) {
+                document.body.classList.remove('descriptionOpened');
+            }, false);
+        </script>
+    </body>
+</html>

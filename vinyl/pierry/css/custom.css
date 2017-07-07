@@ -1,0 +1,49 @@
+/* DEBUT IMPORTANT */
+
+#canvasContainer {
+    background-color: blue;
+}
+
+#canvasContainer canvas {
+    max-width: 90vw;
+    max-height: 90vw;
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, .75);
+}
+
+/* FIN IMPORTANT */
+
+#title {
+    position: absolute;
+    top: .5em;
+    left: 50%;
+    z-index: 1000;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 1.25em;
+    text-align: center;
+}
+
+#buy {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    left: 50%;
+    bottom: 1em;
+    z-index: 1000;
+    transform: translateX(-50%) rotate(0deg);
+    transition: all 1s ease-in-out;
+    color: white;
+    font-size: 1.5em;
+    line-height: 2.9em;
+    text-align: center;
+    border-radius: 1.5em;
+    border: 3px white solid;
+}
+
+    #buy:hover {
+        background-color: black;
+        color: white;
+        transform: translateX(-50%) rotate(360deg);
+    }

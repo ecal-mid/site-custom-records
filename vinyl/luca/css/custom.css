@@ -1,0 +1,225 @@
+/* DEBUT IMPORTANT */
+
+#canvasContainer {
+    background-color: #8c40ff;
+    overflow: hidden;
+}
+
+#canvasContainer canvas {
+    max-width: 90vw;
+    max-height: 90vw;
+    z-index:2
+}
+#rectangleTopLeft{
+  position: absolute;
+  width:500px;
+  height: 500px;
+  bottom: 50%;
+  right: 50%;
+  z-index: 1;
+  transform: translate(-260px,-260px);
+  background-color: #111;
+}
+#rectangleTopCenter{
+  position: absolute;
+  width:500px;
+  height: 500px;
+  bottom: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-250px,-260px);
+  background-color: #111;
+}
+#rectangleTopRight{
+  position: absolute;
+  width:500px;
+  height: 500px;
+  bottom: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(260px,-260px);
+  background-color: #111;
+}
+#rectangleLeft{
+  position: absolute;
+  width:500px;
+  height: 500px;
+  top: 50%;
+  right: 50%;
+  z-index: 1;
+  transform: translate(-260px,-250px);
+  background-color: #111;
+}
+#sliderPerspective{
+    width:20px;
+    height: 500px;
+    max-height: 90vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(260px, -50%);
+  background-color: black;
+  overflow: hidden;
+}
+#sliderPerspectiveKnob{
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  top: 25px;
+  left: 0;
+  z-index: 3;
+  transform: translate(0,0);
+  background-color: white;
+  cursor: ns-resize;
+
+}
+#sliderZoom{
+width:20px;
+height: 500px;
+max-height: 90vw;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: 2;
+  transform: translate(-260px, -50%);
+  background-color: white;
+  overflow: hidden;
+}
+#sliderZoomKnob{
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  top: 25px;
+  left: 0;
+  z-index: 3;
+  transform: translate(0,0);
+  background-color: black;
+  cursor: ns-resize ;
+
+}
+#rectangleRight{
+
+  position: absolute;
+  width:500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(260px,-250px);
+  background-color: #111;
+}
+#rectangleBottomLeft{
+
+  position: absolute;
+  width:500px;
+  height: 500px;
+  top: 50%;
+  right: 50%;
+  z-index: 1;
+  transform: translate(-260px,260px);
+  background-color: #111;
+}
+#rectangleBottomCenter{
+
+  position: absolute;
+  width:500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-250px,260px);
+  background-color: #111;
+}
+#rectangleBottomRight{
+
+  position: absolute;
+  width:500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(260px,260px);
+  background-color: #111;
+}
+#instructions {
+    position: absolute;
+    max-width: 19vw;
+    height: 428px;
+    top: 50%;
+    left: 0.5em;
+    z-index: 2;
+    transform: translateY(-214px);
+    color: white;
+    font-weight: 400;
+    font-size: 2.2em;
+    line-height: 1em;
+    color:white;
+    text-align: left;
+}
+#howto{
+  font-size: 0.5em;
+  line-height: 1.25em;
+}
+@media screen and (max-width: 1170px) {
+    #instructions {
+        display: none;
+    }
+}
+@media screen and (max-height: 750px) {
+    #title {
+        display: none;
+    }
+}
+
+
+/* FIN IMPORTANT */
+
+#title {
+    width: 500px;
+    padding-left: 0.5em;
+    position: absolute;
+    top: .25em;
+    left: 50%;
+    z-index: 1000;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: 400;
+    font-size: 2.2em;
+    line-height: 1.25em;
+    text-align: left;
+}
+
+.buyContainer {
+    width: 500px;
+    height: 500px;
+    max-width: 90vw;
+    max-height: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+#buy {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    left: 50%;
+    bottom: -1.5em;
+    transform: translate(-50%, 0) rotate(0deg);
+    transition: all 1s ease-in-out;
+    color: black;
+    font-size: 1.5em;
+    line-height: 3em;
+    text-align: center;
+    border-radius: 1.5em;
+    background-color: white;
+}
+
+    #buy:hover {
+        background-color: black;
+        color: white;
+        transform: translate(-50%, 0) rotate(360deg);
+    }

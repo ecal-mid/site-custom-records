@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Custom Records" />
+		<meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media &amp; Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+		<meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+		<link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+		<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/screen.css" />
+		<!-- VOTRE FEUILLE DE STYLE -->
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<script defer src="js/p5.min.js"></script>
+		<script defer src="js/sketch.js"></script>
+
+		<title>Toi et moi — What we think happened</title>
+	</head>
+
+	<body>
+		<div id="cache" class="active"><div></div></div>
+
+		<a href="../../index.html" id="customRecords" class=""><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+		<div id="generator">
+			<a href="#" id="toggleDescription" class=""></a>
+
+            <div class="buyContainer">
+            	<a href="#" id="buy">buy</a>
+            </div>
+
+			<!-- ICI VOUS POUVEZ MODIFIER -->
+
+			<div id="canvasContainer">
+				<!-- votre canvas et autres joyeusetés -->
+			</div>
+
+			<!-- ICI VOUS POUVEZ PLUS MODIFIER -->
+
+		</div>
+
+		<div id="description">
+			<blockquote>
+				She silenced the critics and peanut gallery alike with a bucolic singularity of bratty deep.
+				<small>—Pitchfork Review Generator</small>
+			</blockquote>
+			<div class="album">
+				What we think happened
+			</div>
+			<div class="artist">
+				Toi et Moi
+			</div>
+			<div class="informations">
+				31.05.2016<br />
+				2LP vinyl, Digital<br />
+				CR001<br />
+			</div>
+			<div class="tracklist">
+				A1. Prologue<br />
+				A2. At the beginning<br />
+				A3. Lost gun<br />
+				<hr />
+				B1. Living our lives<br />
+				B2. A moment<br />
+				<hr />
+				C1. Phone call<br />
+				C2. Run away<br />
+				C3. Crash<br />
+				<hr />
+				D1. The end
+			</div>
+			<div class="gallery">
+				<img src="imgs/cover/01.png" />
+				<img src="imgs/cover/02.png" />
+				<img src="imgs/cover/03.png" />
+				<img src="imgs/cover/04.png" />
+				<img src="imgs/cover/05.png" />
+				<img src="imgs/cover/06.png" />
+			</div>
+			<div class="cover">
+				ECAL/Romain Cazier
+			</div>
+			<div class="production">
+				<img src="imgs/custom_records_white.png" />
+			</div>
+		</div>
+
+		<!-- PAS TOUCHE -->
+
+		<script>
+            setTimeout(function() {
+                document.getElementById('cache').classList.remove('active');
+            }, 2000);
+
+			var generator 		  = document.getElementById('generator'),
+				toggleDescription = document.getElementById('toggleDescription');
+
+			toggleDescription.addEventListener('click', function(e) {
+				e.stopPropagation();
+				document.body.classList.toggle('descriptionOpened');
+			}, false);
+
+			generator.addEventListener('click', function(e) {
+				document.body.classList.remove('descriptionOpened');
+			}, false);
+		</script>
+	</body>
+</html>

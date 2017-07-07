@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Custom Records" />
+		<meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media & Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+		<meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+		<link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+		<link href='https://fonts.googleapis.com/css?family=Rubik:400' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/screen.css" />
+		<!-- VOTRE FEUILLE DE STYLE -->
+
+		<link rel="stylesheet" href="css/gridster.css">
+	  <link rel="stylesheet" href="css/ui.css">
+	  <link rel="stylesheet" href="css/styles.css">
+	  <link rel="stylesheet" href="css/jquery-ui.css">
+	  <link rel="stylesheet" href="css/component.css">
+	  <link rel="stylesheet" href="css/default.css">
+
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<script defer src="js/p5.min.js"></script>
+		<script src="js/jquery-2.2.2.min.js"></script>
+	  <script src="js/script.js"></script>
+	  <script src="js/jquery-ui.js"></script>
+	  <script src="js/classie.js"></script>
+	  <script src="js/modernizr.custom.js"></script>
+		<!--<script defer src="js/sketch.js"></script>-->
+
+		<title>Caraib Aviation – The dancing men</title>
+
+	  <script>
+	  $(function() {
+	    $( "#sortable" ).sortable();
+	    $( "#sortable" ).disableSelection();
+	  });
+	  </script>
+
+	</head>
+
+	<body>
+		<div id="cache" class="active"><div></div></div>
+
+		<a href="../../index.html" id="customRecords" class="invert"><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+		<div id="generator">
+			<a href="#" id="toggleDescription" class="invert"></a>
+            <div class="gridster">
+                <ul id="sortable">
+                    <li onmouseover="displayTools(0)" onmouseout="hideTools(0)">
+                        <input type="text" size="50" onkeydown="keyCode(event, 0, this)" id="input1A">
+                        <div id="box1A" class="box"></div>
+                        <div id="button-rotate1A" class="button"></div>
+                        <img src="img/2/1a.png" id="img1A" data-rotation="0" class="alphab">
+                        <div class="dragme" id="dragme1A" onmouseover="displayTools(0)" onmouseout="hideTools(0)"></div>
+                    </li>
+                    <li onmouseover="displayTools(1)" onmouseout="hideTools(1)">
+                        <input type="text" size="50" onkeydown="keyCode(event, 1, this)" id="input1B" >
+                        <div id="box1B" class="box"></div>
+                        <div id="button-rotate1B" class="button"></div>
+                        <img src="img/2/1b.png" id="img1B" data-rotation="0" class="alphab">
+                        <div class="dragme" id="dragme1B" onmouseover="displayTools(1)" onmouseout="hideTools(1)"></div>
+                    </li>
+                    <li onmouseover="displayTools(2)" onmouseout="hideTools(2)">
+                        <input type="text" size="50" onkeydown="keyCode(event, 2, this)" id="input1C" >
+                        <div id="box1C" class="box"></div>
+                        <div id="button-rotate1C" class="button"></div>
+                        <img src="img/2/1c.png" id="img1C" data-rotation="0" class="alphab">
+                        <div class="dragme" id="dragme1C" onmouseover="displayTools(2)" onmouseout="hideTools(2)"></div>
+                    </li>
+                    <li onmouseover="displayTools(3)" onmouseout="hideTools(3)">
+                        <input type="text" size="50" onkeydown="keyCode(event, 3, this)" id="input2A" >
+                        <div id="box2A" class="box"></div>
+                        <div id="button-rotate2A" class="button"></div>
+                        <img src="img/2/2a.png" id="img2A" data-rotation="0" class="alphab">
+                        <div class="dragme" id="dragme2A" onmouseover="displayTools(3)" onmouseout="hideTools(3)"></div>
+                    </li>
+                    <li onmouseover="displayTools(4)" onmouseout="hideTools(4)">
+                        <input type="text" size="50" onkeydown="keyCode(event, 4, this)" id="input2B" >
+                        <div id="box2B" class="box"></div>
+                        <div id="button-rotate2B" class="button"></div>
+                        <img src="img/2/2b.png" id="img2B" data-rotation="0" class="alphab">
+                        <div class="dragme" id="dragme2B" onmouseover="displayTools(4)" onmouseout="hideTools(4)"></div>
+                    </li>
+                    <li onmouseover="displayTools(5)" onmouseout="hideTools(5)">
+                        <input type="text" size="50" onkeydown="keyCode(event, 5, this)" id="input2C" >
+                        <div id="box2C" class="box"></div>
+                        <div id="button-rotate2C" class="button"></div>
+                        <img src="img/2/2c.png" id="img2C" data-rotation="0" class="alphab">
+                        <div class="dragme" id="dragme2C" onmouseover="displayTools(5)" onmouseout="hideTools(5)"></div>
+                    </li>
+                    <li onmouseover="displayTools(6)" onmouseout="hideTools(6)">
+                        <input type="text" size="50" onkeydown="keyCode(event, 6, this)" id="input3A" >
+                        <div id="box3A" class="box"></div>
+                        <div id="button-rotate3A" class="button"></div>
+                        <img src="img/2/3a.png" id="img3A" data-rotation="0" class="alphab">
+                        <div class="dragme" id="dragme3A" onmouseover="displayTools(6)" onmouseout="hideTools(6)"></div>
+                    </li>
+                    <li onmouseover="displayTools(7)" onmouseout="hideTools(7)">
+                        <input type="text" size="50" onkeydown="keyCode(event, 7, this)" id="input3B" >
+                        <div id="box3B" class="box"></div>
+                        <div id="button-rotate3B" class="button"></div>
+                        <img src="img/2/3b.png" id="img3B" data-rotation="0" class="alphab">
+                        <div class="dragme" id="dragme3B" onmouseover="displayTools(7)" onmouseout="hideTools(7)"></div>
+                    </li>
+                    <li onmouseover="displayTools(8)" onmouseout="hideTools(8)">
+                        <input type="text" size="50" onkeydown="keyCode(event, 8, this)" id="input3C" >
+                        <div id="box3C" class="box"></div>
+                        <div id="button-rotate3C" class="button"></div>
+                        <img src="img/2/3c.png" id="img3C" data-rotation="0" class="alphab">
+                        <div class="dragme" id="dragme3C" onmouseover="displayTools(8)" onmouseout="hideTools(8)"></div>
+                    </li>
+                </ul>
+                <a href="#" id="buy">buy</a>
+            </div>
+
+            <script src="js/ui.js"></script>
+            <script src="js/changeimg.js"></script>
+            <script src="js/selector.js"></script>
+		</div>
+
+		<div id="description">
+			<blockquote>
+				The come back of the good rock
+				<small>—Pitchfork Review Generator</small>
+			</blockquote>
+			<div class="album">
+				Caraib aviation
+			</div>
+			<div class="artist">
+				The dancing men
+			</div>
+			<div class="informations">
+				31.05.2016<br />
+				2LP vinyl, Digital<br />
+				CR001<br />
+			</div>
+			<div class="tracklist">
+				A1. Prologue<br />
+				A2. At the beginning<br />
+				A3. Lost gun<br />
+				<hr />
+				B1. Living our lives<br />
+				B2. A moment<br />
+				<hr />
+				C1. Phone call<br />
+				C2. Run away<br />
+				C3. Crash<br />
+				<hr />
+				D1. The end
+			</div>
+			<div class="gallery">
+				<img src="imgs/cover/01.png" />
+				<img src="imgs/cover/02.png" />
+				<img src="imgs/cover/03.png" />
+				<img src="imgs/cover/04.png" />
+				<img src="imgs/cover/05.png" />
+				<img src="imgs/cover/06.png" />
+			</div>
+			<div class="cover">
+				ECAL/Justine Rieder
+			</div>
+			<div class="production">
+				<img src="imgs/custom_records_white.png" />
+			</div>
+		</div>
+
+		<!-- PAS TOUCHE -->
+
+        <script>
+            setTimeout(function() {
+                document.getElementById('cache').classList.remove('active');
+            }, 2000);
+
+			var generator 		  = document.getElementById('generator'),
+				toggleDescription = document.getElementById('toggleDescription');
+
+			toggleDescription.addEventListener('click', function(e) {
+				e.stopPropagation();
+				document.body.classList.toggle('descriptionOpened');
+			}, false);
+
+			generator.addEventListener('click', function(e) {
+				document.body.classList.remove('descriptionOpened');
+			}, false);
+		</script>
+	</body>
+</html>

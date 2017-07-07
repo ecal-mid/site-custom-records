@@ -1,0 +1,160 @@
+html,
+body {
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: black;
+}
+
+#toggleDescription {
+    z-index: 100000;
+}
+
+#couche1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  background-image: url("../imgs/couche1_3.gif");
+  background-repeat:repeat;
+  background-size: 0.4% auto;
+  width: 25000px;
+  height: 25000px;
+
+}
+
+#couche2 {
+  width: 2000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  background-image: url("../imgs/couche2_3.png");
+  background-repeat:repeat;
+  background-size: 10% auto;
+  width: 25000px;
+  height: 25000px;
+  mix-blend-mode: overlay;
+  display: none;
+}
+
+#couche3 {
+  width: 2000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  transform: translate(-50%, -50%);
+  background-image: url("../imgs/couche3.5.png");
+  background-repeat:repeat;
+  background-size: 6% auto;
+  width: 25000px;
+  height: 25000px;
+  mix-blend-mode: multiply;
+  display: none;
+}
+
+#titre {
+  width: 50%;
+  z-index: 150;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#drag {
+  width: 36%;
+  z-index: 150000;
+  top: 27%;
+  left: 71%;
+  position:absolute;
+  transform: translate(-50%, -50%);
+}
+
+#cercleA {
+  position: absolute;
+  bottom: 60%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 5vh;
+  z-index: 100000;
+  cursor: pointer;
+}
+
+#cercleB {
+  position: absolute;
+  bottom: 50%;
+  width: 5vh;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 100000;
+  cursor: pointer;
+}
+
+#cercleC {
+  position: absolute;
+  bottom: 40%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 5vh;
+  z-index: 100000;
+  cursor: pointer;
+}
+
+#cart {
+  position: absolute;
+  bottom: 30%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 5vh;
+  z-index: 100000;
+  cursor: pointer;
+}
+
+.edges {
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10000;
+}
+
+#ed1 {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+#ed2 {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  top: 0px;
+  right: 0px;
+}
+
+#ed3 {
+  position: absolute;
+  width: 50%;
+  height: calc(50vh - 25vw);
+  top:0px;
+  left: 25vw;
+}
+
+#ed4 {
+  position: absolute;
+  width: 50%;
+  height: calc(50vh - 25vw);
+  bottom: 0px;
+  left: 25vw;
+}

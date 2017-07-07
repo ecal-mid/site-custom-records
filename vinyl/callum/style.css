@@ -1,0 +1,159 @@
+html, body {
+  margin:0px;
+  padding:0px;
+  width:100%;
+  height:100%;
+  /*background-color: #FFCDB3;*/
+  background-color: #cccccc;
+  font-size : 30px;
+}
+p{
+  margin:0px;
+  margin-bottom:10px;
+}
+#splash {
+  position: fixed;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:100%;
+  background-color: black;
+  color: #cccccc;
+  z-index:10;
+  padding:30px;
+  box-sizing: border-box;
+  font-size : 40px;
+  line-height: 50px;
+  display:block;
+  transition: transform 0.5s;
+}
+#splash .aligner {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform :translateX(-50%) translateY(-50%);
+  text-align:center;
+}
+.aligner p {
+  display: inline-block;
+  text-align:center;
+}
+#bottomRight {
+  position:absolute;
+  bottom:0px;
+  right:30px;
+}
+#centerer {
+  display:inline-block;
+  margin:0px auto;
+  position:relative;
+  left:50%;
+  top:50%;
+  transform :translateX(-50%) translateY(-50%);
+}
+#loaded {
+  display: none;
+  cursor: pointer;
+}
+
+#canvasContainer {
+  float:left;
+  display: inline-block;
+}
+#canvasContainer canvas {
+
+}
+#directCanvas {
+  width:540px;
+  height:540px;
+  box-shadow: 0px 0px 30px #000000;
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation: nearest-neighbor;
+}
+
+#help {
+  padding:10px;
+  box-sizing: border-box;
+  opacity:0;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:10;
+  width:540px;
+  height:540px;
+  background-color:white;
+  pointer-events: none;
+  background-color: #cccccc;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.loadingclass {
+  padding:10px;
+}
+#buttons {
+  float:left;
+}
+#saveContainer {
+  position:absolute;
+  right:30px;
+  top:30px;
+  text-align: center;
+}
+#saveButton {
+  cursor: pointer;
+
+}
+#controls {
+  margin-left:5px;
+}
+.control {
+  width:60px;
+  height:60px;
+  /*border-radius: 50%;*/
+  margin: 0px 10px 15px 10px;
+  cursor: pointer;
+  background-size: contain;
+}
+
+#infobuy {
+  position: absolute;
+  right:0px;
+  bottom:0px;
+}
+#song {
+  background: url(cursors/icons/white.png);
+
+  background-size: contain;
+}
+
+#artist {
+  background: url(cursors/icons/black.png);
+  background-size: contain;
+}
+
+#background {
+  background: url(cursors/icons/bg.png);
+  background-size: contain;
+}
+#info {
+  background: url(cursors/icons/info.png);
+  background-size: contain;
+}
+#buy {
+  background: url(cursors/icons/cart.png);
+  background-size: contain;
+  margin-bottom:0px;
+}
+canvas.song {
+  cursor: url(cursors/white.png) 15 15, auto;
+}
+canvas.artist {
+  cursor: url(cursors/black.png) 15 15, auto;
+}
+canvas.background {
+  cursor: url(cursors/color.png) 15 15, auto;
+}

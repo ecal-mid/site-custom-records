@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Custom Records" />
+		<meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media & Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+		<meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+		<link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+		<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/screen.css" />
+		<!-- VOTRE FEUILLE DE STYLE -->
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<script src="http://mrdoob.github.com/three.js/build/three.min.js"></script>
+    <script src="js/dat.gui.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+
+		<title>Klanino – From love</title>
+	</head>
+
+	<body>
+		<div id="cache" class="active"><div></div></div>
+
+		<a href="../../index.html" id="customRecords" class="invert"><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+		<div id="generator">
+			<a href="#" id="toggleDescription" class="invert"></a>
+
+			<!-- ICI VOUS POUVEZ MODIFIER -->
+            <div id="imageDisque">
+                <div class="topLeft"></div>
+                <div class="bottomRight"></div>
+    			<img src="imgs/Disque9.png" alt=""/>
+            </div>
+    	    <div onclick="document.getElementById('imageDisque').classList.toggle('active');" id="ButtonAfficher"></div>
+    	    <div onclick="saveImage()"id="ButtonSave"></div>
+    	    <div onclick="resetScene();"id="ButtonReload"></div>
+			<div id="canvasContainer">
+
+				<!-- votre canvas et autres joyeusetés -->
+			</div>
+			<!-- ICI VOUS POUVEZ PLUS MODIFIER -->
+		</div>
+
+		<div id="description">
+			<blockquote>
+				She silenced the critics and peanut gallery alike with a bucolic singularity of bratty deep.
+				<small>—Pitchfork Review Generator</small>
+			</blockquote>
+			<div class="album">
+				From love
+			</div>
+			<div class="artist">
+				Klanino
+			</div>
+			<div class="informations">
+				10.10.2001<br />
+				2LP vinyl, Digital<br />
+				CR001<br />
+			</div>
+			<div class="tracklist">
+				A1. Prologue<br />
+				A2. At the beginning<br />
+				A3. Lost gun<br />
+				<hr />
+				B1. Living our lives<br />
+				B2. A moment<br />
+				<hr />
+				C1. Phone call<br />
+				C2. Run away<br />
+				C3. Crash<br />
+				<hr />
+				D1. The end
+			</div>
+			<div class="gallery">
+				<img src="imgs/cover/01.png" />
+				<img src="imgs/cover/02.png" />
+				<img src="imgs/cover/03.png" />
+				<img src="imgs/cover/04.png" />
+				<img src="imgs/cover/05.png" />
+				<img src="imgs/cover/06.png" />
+			</div>
+			<div class="cover">
+				ECAL/Mathieu Palauqui
+			</div>
+			<div class="production">
+				<img src="imgs/custom_records_white.png" />
+			</div>
+		</div>
+
+		<!-- PAS TOUCHE -->
+
+        <script>
+            setTimeout(function() {
+                document.getElementById('cache').classList.remove('active');
+            }, 2000);
+
+			var generator 		  = document.getElementById('generator'),
+				toggleDescription = document.getElementById('toggleDescription');
+
+			toggleDescription.addEventListener('click', function(e) {
+				e.stopPropagation();
+				document.body.classList.toggle('descriptionOpened');
+			}, false);
+
+			generator.addEventListener('click', function(e) {
+				document.body.classList.remove('descriptionOpened');
+			}, false);
+		</script>
+		<script>
+            // Debut du THREE JS
+        	var renderer, scene, camera, mesh, mesh1 ,mesh2, mesh3, plane;
+        	var posX, posY, posZ;
+        	var moving = 1;
+        	var objects = [];
+        	var objects2 = [];
+        	var NombreDeForme;
+        	init();
+        	animate();
+
+        	function init(){
+                // RENDU
+    			renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+    			renderer.shadowMap.enabled = true;
+    			renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    			renderer.setSize( window.innerWidth, window.innerHeight );
+    			document.getElementById('canvasContainer').appendChild(renderer.domElement);
+                // SCENE
+    			scene = new THREE.Scene();
+                // ADD ELEMENTS TO SCENE
+                resetScene();
+			}
+
+            function resetScene() {
+                for(var i = scene.children.length - 1; i >= 0; i--) {
+                    scene.remove(scene.children[i]);
+                }
+                objects = [];
+                objects2 = [];
+                // CAMERA
+    			camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 10000 );
+    			camera.position.set(0, 0, 1500);
+    			scene.add(camera);
+                // ORBUTCORL
+    			controls = new THREE.OrbitControls( camera );
+
+		 		NombreDeForme=10;
+                // CUBE
+				for(var i =0; i < NombreDeForme ; i ++){
+					var geometry = new THREE.CubeGeometry( 20 +(Math.random() * 200), 20 +(Math.random() * 500), 20 +(Math.random() * 300) );
+					var material = new THREE.MeshPhongMaterial( { color: Math.random() * 0xffffff } );
+					mesh = new THREE.Mesh( geometry, material );
+					objects.push( mesh );
+					scene.add( mesh );
+					mesh.position.x = Math.random() * (-window.innerWidth / 3 + 100);
+					mesh.position.y= (Math.random() * 600) -250;
+					mesh.rotation.x = 1;
+					mesh.rotation.y = 1;
+					mesh.rotation.z = 1;
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+
+					var mesh2 = mesh.clone();
+					mesh2.rotation.y= -mesh.rotation.y ;
+					mesh2.rotation.z= -mesh.rotation.z;
+					mesh2.position.x = -mesh.position.x;
+					mesh2.castShadow = true;
+					mesh2.receiveShadow = true;
+					objects2.push( mesh2 );
+					scene.add( mesh2 );
+				}
+                // BACKGROUND
+				var geometry = new THREE.PlaneBufferGeometry( 9000, 9000 );
+				var material = new THREE.MeshPhongMaterial( { color: Math.random() * 0xcccccc } );;
+				var plane = new THREE.Mesh( geometry, material);
+				plane.position.z = -1500;
+				plane.rotation.z = 300;
+				plane.castShadow = true;
+				plane.receiveShadow = true;
+				scene.add( plane );
+                // LIGHT
+			 	scene.add( new THREE.AmbientLight( 0x505050 ) );
+				var light = new THREE.SpotLight( 0xffffff);
+				light.position.set( 0, 500, 1500 );
+				light.castShadow = true;
+				scene.add( light );
+            }
+
+			function animate(){
+				// DRAW
+				requestAnimationFrame( animate );
+				for ( var i = 0, l = objects.length; i < l; i ++ ) {
+						var object = objects[ i ];
+						object.rotation.x += 0.001*(i+1);
+						object.rotation.y += 0.0005*(i+1);
+					}
+					for ( var j = 0, k = objects2.length; j < k; j ++ ) {
+						var object = objects2[ j ];
+						object.rotation.x += 0.001*(j+1);
+						object.rotation.y -= 0.0005*(j+1);
+					}
+				// RENDU
+				render();
+			}
+
+			function render() {
+				renderer.render( scene, camera );
+			}
+
+			function saveImage() {
+				var url = renderer.domElement.toDataURL();
+				window.location = url;
+			}
+
+            window.onresize = function() {
+    			renderer.setSize( window.innerWidth, window.innerHeight );
+            }
+		</script>
+	</body>
+</html>

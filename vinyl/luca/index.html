@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Custom Records" />
+		<meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media & Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+		<meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+		<link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+		<link href='https://fonts.googleapis.com/css?family=Rubik:400' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/screen.css" />
+		<!-- VOTRE FEUILLE DE STYLE -->
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+		<script defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js"></script>
+
+		<title>1962 PGA Championship — Forget my Age</title>
+	</head>
+
+	<body>
+		<div id="cache" class="active"><div></div></div>
+
+		<a href="../../index.html" id="customRecords" class="invert"><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+		<div id="generator">
+			<a href="#" id="toggleDescription" class="invert"></a>
+			<!-- <div id = "rectangleTopLeft"></div>
+			<div id = "rectangleTopCenter"></div>
+			<div id = "rectangleTopRight"></div>
+			<div id = "rectangleLeft"></div>
+			<div id = "rectangleRight"></div>
+			<div id = "rectangleBottomLeft"></div>
+			<div id = "rectangleBottomCenter"></div>
+			<div id = "rectangleBottomRight"></div> -->
+			<div id = "sliderPerspective">
+				<div id = "sliderPerspectiveKnob"></div>
+			</div>
+			<div id = "sliderZoom">
+				<div id = "sliderZoomKnob"></div>
+			</div>
+			<!-- <div id="instructions">Instructions<br />
+				<div id = "howto">
+					<br />
+					Move the mouse around to rotate the view.<br /><br />
+					Use the left-side slider to move the view back and forth.<br /><br />
+					Use the right-side slider to change the perspective (field of view).<br /><br />
+					Click on the cover to freeze it.
+				</div>
+			</div> -->
+
+			<!-- ICI VOUS POUVEZ MODIFIER -->
+
+			<!-- <h1 id="title">Forget my Age<br /><small>1962 PGA Championship</small></h1> -->
+
+            <div class="buyContainer">
+            	<a href="#" id="buy">buy</a>
+            </div>
+
+			<div id="canvasContainer">
+			</div>
+
+			<!-- ICI VOUS POUVEZ PLUS MODIFIER -->
+
+		</div>
+
+		<div id="description">
+			<blockquote>
+				Nine tracks of Synth Wave Excellence from the famous british quintet.
+				<small>—BBC Radio</small>
+			</blockquote>
+			<div class="album">
+				Forget my Age
+			</div>
+			<div class="artist">
+				1962 PGA Championship
+			</div>
+			<div class="informations">
+				10.06.2016<br />
+				2LP vinyl, Digital<br />
+				CR007<br />
+			</div>
+			<div class="tracklist">
+				A1. Front 9<br />
+				A2. The Fairway<br />
+				A3. Tiger in the Woods<br />
+				<hr />
+				B1. Left-Side Golf<br />
+				B2. Go Green<br />
+				<hr />
+				C1. Swing the Clubhead<br />
+				C2. Get Rich<br />
+				C3. 575 Yards<br />
+				<hr />
+				D1.	Hlinc
+			</div>
+			<div class="gallery">
+				<img src="imgs/cover/01.png" />
+				<img src="imgs/cover/02.png" />
+				<img src="imgs/cover/03.png" />
+				<img src="imgs/cover/04.png" />
+				<img src="imgs/cover/05.png" />
+				<img src="imgs/cover/06.png" />
+			</div>
+			<div class="cover">
+				ECAL/Luca Kasper
+			</div>
+			<div class="production">
+				<img src="imgs/custom_records_white.png" />
+			</div>
+		</div>
+
+		<!-- PAS TOUCHE -->
+
+		<script>
+            setTimeout(function() {
+                document.getElementById('cache').classList.remove('active');
+            }, 2000);
+
+            var generator 		  = document.getElementById('generator'),
+                toggleDescription = document.getElementById('toggleDescription');
+
+            toggleDescription.addEventListener('click', function(e) {
+                e.stopPropagation();
+                document.body.classList.toggle('descriptionOpened');
+            }, false);
+
+            generator.addEventListener('click', function(e) {
+                document.body.classList.remove('descriptionOpened');
+            }, false);
+		</script>
+		<script defer src="js/sketch.js"></script>
+	</body>
+</html>

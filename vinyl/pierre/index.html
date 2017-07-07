@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Custom Records" />
+        <meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media & Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+        <meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+        <link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+        <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/screen.css" />
+        <!-- VOTRE FEUILLE DE STYLE -->
+        <link rel="stylesheet" type="text/css" href="css/ui.css" />
+
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
+
+        <title>Pit 7 dam - Kindness as roo</title>
+    </head>
+
+    <body class="">
+        <div id="cache" class="active"><div></div></div>
+
+        <a href="../../index.html" id="customRecords" class="invert"><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+        <div id="generator">
+            <a href="#" id="toggleDescription" class=""></a>
+
+            <div id="canvasContainer">
+                <script>
+                    var show = 0;
+                    function showImage(){
+                        show++;
+                        show %= 2;
+                        if(show == 1) {
+                            $("#invert").toggle(true);
+                        }
+                        else {
+                            $("#invert").toggle(false);
+                        }
+                    }
+                </script>
+
+                <img id="invert" src="imgs/invert.png" style="display:none; pointer-events: none;"></div>
+                <div style ="position:absolute; background-color:white; overflow:hidden; width:500px; height:500px; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow:5px 5px 40px #000000;">
+
+                    <img id="os1" src = "imgs/new/2.png"  data-rotation="0" />
+                    <img id="os2" src = "imgs/new/1.png"  data-rotation="0" />
+                    <img id="os3" src = "imgs/new/4.png"  data-rotation="0" />
+                    <img id="os4" src = "imgs/new/3.png"  data-rotation="0" />
+
+                    <img id = "P" class="lettre" src = "imgs/P.png" />
+                    <img id = "I" class="lettre" src = "imgs/I.png" />
+                    <img id = "T" class="lettre" src = "imgs/T.png" />
+                    <img id = "s7" class="lettre" src = "imgs/7.png"/>
+                    <img id = "D" class="lettre" src = "imgs/D.png" />
+                    <img id = "A" class="lettre" src = "imgs/A.png" />
+                    <img id = "M" class="lettre" src = "imgs/M.png" />
+
+                </div>
+
+                <div style ="position:absolute; top: 50%; left: 50%; transform: translate(275px, -250px);height:500px">
+                    <img id="rotation" class="selectors" src="imgs/GLYPHES/rotation.png">
+                    <img id="position" class="selectors" src="imgs/GLYPHES/move.png">
+                    <img id="invertBouton" onclick="showImage()" src="imgs/GLYPHES/inverser.png" class="selectors">
+                </div>
+
+                <div class="ticker-container marquee3k">
+                    SELECT ITEMS TO MODIFY THE VISUAL
+                </div>
+            </div>
+        </div>
+
+        <div id="description">
+            <blockquote>
+                All of the material contained in this set is essential listening, as it chronicles the most groundbreaking period of a group who consistently explored new terrain with each successive release.
+                <small>—Pitchfork Review Generator</small>
+            </blockquote>
+            <div class="album">
+                Kindness as roo
+            </div>
+            <div class="artist">
+                Pit 7 dam
+            </div>
+            <div class="informations">
+                31.05.2016<br />
+                2LP vinyl, Digital<br />
+                CR001<br />
+            </div>
+            <div class="tracklist">
+                A1. KINDNESS AS ROO<br />
+                A2. ONE WAY OR ANOTHER<br />
+                A3. ATOMIC<br />
+                <hr />
+                B1. LEFTOVERS<br />
+                B2. MY NOISE<br />
+                <hr />
+                C1. WANT LOVE <br />
+                C2. DROP IT NOW<br />
+                <hr />
+                D1. The end
+            </div>
+            <div class="gallery">
+                <img src="1.png" />
+                <img src="2.png" />
+                <img src="3.png" />
+                <img src="4.png" />
+                <img src="5.png" />
+                <img src="6.png" />
+
+            </div>
+            <div class="cover">
+                ECAL/Pierre Allain-Longval
+            </div>
+            <div class="production">
+                <img src="imgs/custom_records_white.png" />
+            </div>
+        </div>
+
+        <!-- PAS TOUCHE -->
+
+        <script src="js/marquee3k.min.js"></script>
+        <script src="js/ui.js"></script>
+        <script>
+            Marquee3k();
+
+            setTimeout(function() {
+                document.getElementById('cache').classList.remove('active');
+                document.body.classList.add('position');
+            }, 2000);
+
+            var generator         = document.getElementById('generator'),
+                toggleDescription = document.getElementById('toggleDescription');
+
+            toggleDescription.addEventListener('click', function(e) {
+                e.stopPropagation();
+                document.body.classList.toggle('descriptionOpened');
+            }, false);
+
+            generator.addEventListener('click', function(e) {
+                document.body.classList.remove('descriptionOpened');
+            }, false);
+        </script>
+    </body>
+</html>

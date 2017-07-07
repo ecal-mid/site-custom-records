@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Custom Records" />
+		<meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media & Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+		<meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+		<link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+		<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/screen.css" />
+		<!-- VOTRE FEUILLE DE STYLE -->
+		<link rel="stylesheet" type="text/css" href="custom.css" />
+
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+		<script src="jquery.min.js"></script>
+		<script defer src="js/p5.min.js"></script>
+		<script defer src="sketch.js"></script>
+		<title>George Jenkinson – Any Longer Believes</title>
+	</head>
+
+	<body>
+		<div id="cache" class="active"><div></div></div>
+
+		<a href="../../index.html" id="customRecords" class=""><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+		<div id="generator">
+			<a href="#" id="toggleDescription"></a>
+			<div id="canvasContainer">
+				<div id="centerer">
+					<div id="canvasContainerInside">
+        		        <div id="directCanvas">
+                            <div id="help">
+                				<p>
+                	            Cliquez sur les icones à droite afin de sélectionner le calque que vous aimeriez modifier. Puis clickez et draggez sur la couverture afin de déformer l'image.
+                				</p>
+        		            </div>
+        		        </div>
+
+		                 <div style="clear:both"></div>
+		            </div>
+					<div id="buttons">
+                        <div id="controls">
+                            <div class="control" id="background" onclick="changeTo(0)"></div>
+                            <div class="control" id="song" onclick="changeTo(1)"></div>
+                            <div class="control" id="artist" onclick="changeTo(2)"></div>
+                        </div>
+                        <div id="infobuy">
+                            <div class="control" id="info" onclick="displayHelp()"></div>
+                            <div class="control" id="buy" onclick="saveImage()"></div>
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+		</div>
+
+		<div id="description">
+			<blockquote>
+				Sometimes you know you’ve got something so timely, so right then, you have to grab it.
+				<small>—Pitchfork Review Generator</small>
+			</blockquote>
+			<div class="album">
+				Any Longer Believes
+			</div>
+			<div class="artist">
+				George Jenkinson
+			</div>
+			<div class="informations">
+				03.07.2012<br />
+				1EP vinyl, Digital<br />
+				CR016<br />
+			</div>
+			<div class="tracklist">
+				A1. Work it<br />
+				A2. EJK-37<br />
+				A3. Catharsis<br />
+				<hr />
+				B1. Liquid<br />
+				B2. Sonic Frost<br />
+			</div>
+			<div class="gallery">
+				<img src="imgs/cover/01.png" />
+				<img src="imgs/cover/02.png" />
+				<img src="imgs/cover/03.png" />
+				<img src="imgs/cover/04.png" />
+				<img src="imgs/cover/05.png" />
+				<img src="imgs/cover/06.png" />
+			</div>
+			<div class="cover">
+				ECAL/Callum Ross
+			</div>
+			<div class="production">
+				<img src="imgs/custom_records_white.png" />
+			</div>
+		</div>
+
+	  <script>
+	  var helpDisplaying = false;
+	  function changeTo(newcurrent) {
+	    currentLayer = newcurrent;
+	    for(i = 0; i < folderNames.length; i++) {
+	      $( "canvas" ).toggleClass( folderNames[i], false );
+	    }
+	    $( "canvas" ).toggleClass( folderNames[currentLayer], true );
+	  }
+	  function saveImage(newcurrent) {
+	    save("ANY_LONGER_BELIEVES.png");
+	  }
+	  function displayHelp() {
+	    if(helpDisplaying) {
+	      helpDisplaying = false;
+	      $( "#help" ).css({"opacity" : 0, "pointer-events" : "none"});
+	    }
+	    else {
+	      helpDisplaying = true;
+
+	      $( "#help" ).css({"opacity" : 0.9, "pointer-events" : "auto"});
+	    }
+	  }
+	  </script>
+		<!-- PAS TOUCHE -->
+
+		<script>
+			var generator 		  = document.getElementById('generator'),
+				toggleDescription = document.getElementById('toggleDescription');
+
+			toggleDescription.addEventListener('click', function(e) {
+				e.stopPropagation();
+				document.body.classList.toggle('descriptionOpened');
+			}, false);
+
+			generator.addEventListener('click', function(e) {
+				document.body.classList.remove('descriptionOpened');
+			}, false);
+		</script>
+	</body>
+</html>

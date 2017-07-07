@@ -1,0 +1,181 @@
+#sortable{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+    width: 100%;
+}
+#sortable li{
+	float: left;
+	width: 33.333333333%;
+	padding-top: 33.333333333%;
+    position: relative;
+	font-size: 4em;
+	text-align: center;
+}
+nav{
+	margin-left:163px;
+}
+.selectors{
+	height:50px;
+	width:50px;
+	float:left;
+	margin:5px;
+	border:2px solid black;
+}
+
+.button{
+	z-index:10000000;
+	text-align: center;
+	line-height: 0;
+	color:black;
+	font-family: "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	cursor:pointer;
+	width:30px;
+	height:30px;
+    padding: 3px;
+	position:absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(22px);
+    background-color: white;
+    background-image: url('../icon/rotation.png');
+    background-position: 60% 50%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+}
+input{
+	width:30px;
+	height:30px;
+	position:absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(-22px);
+	z-index:10000;
+	border:2px solid black;
+	padding-left:6px;
+	text-align: centre;
+	background:white;
+	font-size:.3em !important;
+	text-transform: uppercase;
+}
+.box {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+	top: 0;
+	left: 0;
+	z-index:10;
+}
+.box img{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+.alphab{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 8;
+	width: 100%;
+	height: 100%;
+}
+
+.dragme{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index: 1000;
+	background-color: white;
+	opacity: .8;
+	height: 100%;
+	width: 100%;
+}
+.dragme p{
+	font-size: .5em !important;
+	font-family: helvetica, sans-serif;
+	margin-top:80px;
+}
+.gridster{
+    width: 600px;
+    height: 600px;
+    max-width: 90vw;
+    max-height: 90vw;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 5px black;
+	z-index: 1000;
+}
+#icon-rotation{
+	height:30px;
+	width:30px;
+	background-color:white;
+	border:2px solid black;
+	padding:2px;
+}
+li:hover{
+	 cursor: move;
+}
+
+#album{
+	margin-top:50px;
+	text-align: center;
+	text-transform: uppercase;
+	color:black !important;
+}
+#group{
+	text-align: center;
+	color:black !important;
+}
+#send{
+	position:absolute;
+	right:150px;
+	top:44%;
+}
+#custom{
+	position:absolute;
+	top :50%;
+	left:150px;
+}
+#custom h3{
+	text-align: center;
+	color:black !important;
+	font-size: 1.2em;
+
+}
+.color-4{
+	background-color: white !important;
+}
+.btn-4{
+	border:none !important;
+	color:black !important;
+}
+.btn-4:hover{
+	background: none !important;
+}
+.btn-4c:before {
+	top: -5px !important;
+}
+.btn-4:before{
+	color:black !important;
+}
+/*li .dragme,
+li input,
+li .button {
+	opacity: 0;
+	transition: .5s ease-in-out;
+}*/
+/*li:hover .dragme,
+li:hover input,
+li:hover .button,
+li.sortable-helper:hover .dragme,
+li.sortable-helper:hover input,
+li.sortable-helper:hover .button {
+	opacity: 1;
+}*/

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Custom Records" />
+        <meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media & Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+        <meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+        <link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+        <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/screen.css" />
+        <!-- VOTRE FEUILLE DE STYLE -->
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript" src="js/pathseg.js"></script>
+        <script type="text/javascript" src="js/decomp.min.js"></script>
+        <script type="text/javascript" src="js/matter.js"></script>
+        <script type="text/javascript" src="js/lib/jquery-1.10.2.js"></script>
+
+        <title>Bobr — Time for tobacco</title>
+    </head>
+
+    <body>
+		<div id="cache" class="active"><div></div></div>
+
+		<a href="../../index.html" id="customRecords" class=""><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+        <div id="generator">
+            <a href="#" id="toggleDescription" class=""></a>
+
+            <!-- ICI VOUS POUVEZ MODIFIER -->
+
+            <div id="canvasContainer">
+                <div class="buyContainer">
+                    <a href="#" id="buy">buy</a>
+                </div>
+                <div id="y-axis" class="axis">
+                    <!--<label for="gravity-y">y-axis</label>-->
+                    <input autocomplete="off" id="gravity-y" type="range"  value="0" min="-0.2" max="0.2" step=".02" oninput="gravOutputUpdate('y-val', 'y', value)">
+                    <output for="gravity-y" id="y-val" class="output"></output>
+                </div>
+                <div id="x-axis" class="axis">
+                    <!--<label for="gravity-x">x-axis</label>-->
+                    <input autocomplete="off" id="gravity-x" type="range" value="0" min="-0.2" max="0.2" step=".02" oninput="gravOutputUpdate('x-val', 'x', value);">
+                    <ouput for="gravity-x" id="x-val" class="output">0</output>
+                </div>
+            </div>
+        </div>
+
+        <div id="description">
+            <blockquote>
+                It's toasted! Your throat protection against irritation against cough
+                <small>—Lucky Strike</small>
+            </blockquote>
+            <div class="album">
+                Time for tobacco
+            </div>
+            <div class="artist">
+                Bobr
+            </div>
+            <div class="informations">
+                31.05.2016<br />
+                2LP vinyl, Digital<br />
+                CR001<br />
+            </div>
+            <div class="tracklist">
+                A1. Nicotine<br />
+                A2. Méthanol<br />
+                A3. Ammoniac<br />
+                <hr />
+                B1. Arsenic<br />
+                B2. Cadmium<br />
+                <hr />
+                C1. Uréthane<br />
+                C2. Acétone<br />
+                C3. Monoxyde de carbone<br />
+                <hr />
+                D1. Chlorure de vinyle
+            </div>
+            <div class="gallery">
+                <img src="imgs/cover/01.png" />
+                <img src="imgs/cover/02.png" />
+                <img src="imgs/cover/03.png" />
+                <img src="imgs/cover/04.png" />
+                <img src="imgs/cover/05.png" />
+                <img src="imgs/cover/06.png" />
+            </div>
+            <div class="cover">
+                ECAL/Guillaume Simmen
+            </div>
+            <div class="production">
+                <img src="imgs/custom_records_white.png" />
+            </div>
+        </div>
+
+        <!-- PAS TOUCHE -->
+
+        <script src="js/matter2.js"></script>
+        <script>
+            setTimeout(function() {
+                document.getElementById('cache').classList.remove('active');
+            }, 2000);
+
+			var generator 		  = document.getElementById('generator'),
+				toggleDescription = document.getElementById('toggleDescription');
+
+			toggleDescription.addEventListener('click', function(e) {
+				e.stopPropagation();
+				document.body.classList.toggle('descriptionOpened');
+                if(document.body.classList.contains('descriptionOpened')) {
+                } else {
+                }
+			}, false);
+
+			generator.addEventListener('click', function(e) {
+				document.body.classList.remove('descriptionOpened');
+			}, false);
+		</script>
+    </body>
+</html>

@@ -1,0 +1,180 @@
+#imageDisque {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+    #imageDisque .topLeft,
+    #imageDisque .topRight {
+        height: 100%;
+        position: relative;
+    }
+
+    #imageDisque .topLeft:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        max-height: 11vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+    }
+    #imageDisque .topLeft:after {
+        content: "";
+        width: 100%;
+        max-width: -webkit-calc(50% - 39vh);
+        max-width: calc(50% - 39vh);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+    }
+    #imageDisque .bottomRight:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        max-height: 11vh;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: black;
+    }
+    #imageDisque .bottomRight:after {
+        content: "";
+        width: 100%;
+        max-width: -webkit-calc(50% - 39vh);
+        max-width: calc(50% - 39vh);
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: black;
+    }
+
+    #imageDisque img {
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 80vh;
+      /*margin: 0px auto;*/
+      z-index: 100;
+      /*display:block;*/
+    }
+
+      #imageDisque.active {
+        display: block;
+      }
+        html, body {
+          background-color: #6666FF;
+          margin: 0px;
+          overflow: hidden;
+          width:100%;
+        }
+
+        .buttons {
+        position:absolute;
+        margin-top:2vh;
+        margin-left:2vh;
+        z-index: 200;
+        }
+
+        #imagepng {
+          /*color: #6666FF;*/
+          position: absolute;
+
+          /*margin-left:5%;*/
+          width: 100%;
+          align: center;
+          z-index: 100;
+          display:block;
+        }
+
+      #info {
+        color: #6666FF;
+        position: absolute;
+        top: 1%;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        display:block;
+      }
+
+      #container{
+        width:100%;
+     	 max-height: 35%;
+    	 display: block;
+        /*margin-left: auto;
+        margin-right: auto*/
+
+      }
+
+
+            #ButtonAfficher{
+              position: absolute;
+              z-index: 2000;
+              bottom: 20px;
+              left: 50%;
+              -webkit-transform: translateX(-50%) translateX(-100px);
+              transform: translateX(-50%) translateX(-100px);
+              width: 50px;
+              height: 50px;
+              background-image: url(../imgs/IconCD.png);
+              background-size: cover;
+              background-position: top center;
+              cursor: pointer;
+              transition: opacity 0.3s ease-in-out;
+            }
+
+            .descriptionOpened #ButtonAfficher {
+                pointer-events: none;
+                opacity: 0.1;
+            }
+
+            #ButtonSave{
+              position: absolute;
+              z-index: 2000;
+              bottom: 20px;
+              left: 50%;
+              -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+              width: 50px;
+              height: 50px;
+              background-image: url(../imgs/IconS.png);
+              background-size: cover;
+              background-position: top center;
+              cursor: pointer;
+              transition: opacity 0.3s ease-in-out;
+            }
+
+            .descriptionOpened #ButtonSave {
+                pointer-events: none;
+                opacity: 0.1;
+            }
+
+            #ButtonReload{
+              position: absolute;
+              z-index: 2000;
+              bottom: 20px;
+              left: 50%;
+              -webkit-transform: translateX(-50%) translateX(100px);
+              transform: translateX(-50%) translateX(100px);
+              width: 50px;
+              height: 50px;
+              background-image: url(../imgs/IconR.png);
+              background-size: cover;
+              background-position: top center;
+              cursor: pointer;
+              transition: opacity 0.3s ease-in-out;
+            }
+
+            .descriptionOpened #ButtonReload {
+                pointer-events: none;
+                opacity: 0.1;
+            }

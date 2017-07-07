@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Custom Records" />
+		<meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media &amp; Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+		<meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+		<link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+		<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/screen.css" />
+		<!-- VOTRE FEUILLE DE STYLE -->
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+        <script src="js/jquery.min.js"></script>
+
+		<title>Elliptic Gauss Sum – Correct These Deffects</title>
+	</head>
+
+	<body>
+		<div id="cache" class="active"><div></div></div>
+
+		<a href="../../index.html" id="customRecords" class=""><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+		<div id="generator">
+			<a href="#" id="toggleDescription" class=""></a>
+
+            <div id="canvasContainer">
+                <div id="grayscreen">&nbsp;</div>
+
+                <div id="layer_popup">
+                    <img src="imgs/shapenr1.png" alt="" onclick=" $('#layer_popup').hide();" />
+                </div>
+
+                <div id="main_menu" onclick=" $('#main_menu').hide();$('#grayscreen').hide();">
+                    <img src="imgs/dd2menu.png" usemap="#imgmap" alt="" />
+                </div>
+
+                <img id="mu" src="imgs/mn.png" alt="" onclick=" $('#main_menu').toggle();$('#grayscreen').toggle();" />
+
+                <img id="pp" src="imgs/pp2.png" alt="" onclick=" togglePlayPause();" />
+
+                <svg id="svg_main" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" version="1.1">
+
+                    <script type="text/ecmascript">  <![CDATA[
+
+                        var selectedElement = 0;
+                        var currentX = 0;
+                        var currentY = 0;
+                        var currentMatrix = 0;
+
+                        var svgMain = document.getElementById('svg_main');
+
+                        function selectElement(evt) {
+                            selectedElement = evt.target;
+
+                            var pointnr = selectedElement.getAttribute("dd2_id");
+                            var nrall = document.getElementById("maskpoly_" + gplc).points.length-1;
+                            //REMOVE THIS PART
+                            // if(nrall != pointnr){
+                            //
+                            //     currentX = evt.clientX;
+                            //     currentY = evt.clientY;
+                                currentMatrix = selectedElement.getAttributeNS(null, "transform").slice(7, -1).split(' ');
+
+                                for (var i = 0; i < currentMatrix.length; i++) {
+                                    currentMatrix[i] = parseFloat(currentMatrix[i]);
+                                }
+
+                                svgMain.setAttributeNS(null, "onmousemove", "moveElement(evt)");
+                                // selectedElement.setAttributeNS(null, "onmouseout", "deselectElement(evt)");
+                                svgMain.setAttributeNS(null, "onmouseup", "deselectElement(evt)");
+                            // }
+                        }
+
+                        function moveElement(evt) {
+                            // var dx = evt.clientX - currentX;
+                            // var dy = evt.clientY - currentY;
+                            // currentMatrix[4] += dx;
+                            // currentMatrix[5] += dy;
+                            var offset = $('#svg_main').offset();
+                            currentMatrix[4] = Math.round(1000 * (evt.pageX - offset.left) / $('#svg_main').width());
+                            currentMatrix[5] = Math.round(1000 * (evt.pageY - offset.top) / $('#svg_main').height());
+
+                            window.drag_element = true;
+
+                            var pointnr = selectedElement.getAttribute("dd2_id");
+                            // document.getElementById("maskpoly_" + gplc).points[pointnr].x += dx;
+                            // document.getElementById("maskpoly_" + gplc).points[pointnr].y += dy;
+                            document.getElementById("maskpoly_" + gplc).points[pointnr].x = currentMatrix[4];
+                            document.getElementById("maskpoly_" + gplc).points[pointnr].y = currentMatrix[5];
+
+                            // selectedElement.setAttributeNS(null, "transform", "matrix(" + currentMatrix.join(' ') + ")");
+                            selectedElement.setAttributeNS(null, "x", currentMatrix[4]);
+                            selectedElement.setAttributeNS(null, "y", currentMatrix[5]);
+                            currentX = evt.clientX;
+                            currentY = evt.clientY;
+                        }
+
+                        function deselectElement(evt) {
+                            if (selectedElement != 0) {
+                                svgMain.removeAttributeNS(null, "onmousemove");
+                                // svgMain.removeAttributeNS(null, "onmouseout");
+                                svgMain.removeAttributeNS(null, "onmouseup");
+                                selectedElement = 0;
+                                //window.drag_element = false;
+                            }
+                        }
+
+                    ]]>
+                    </script>
+
+                    <defs>
+                        <filter id="noise">
+                            <feTurbulence id="noise_turb" baseFrequency="0.22" numOctaves="8" result="noise" seed="0" />
+                            <feDisplacementMap id="noise_displacement" in="SourceGraphic" in2="noise" scale="20" />
+                        </filter>
+                        <filter id="noise2">
+                            <feTurbulence id="noise2_turb" baseFrequency="0.043" numOctaves="8" result="noise" seed="0" />
+                            <feDisplacementMap id="noise2_displacement" in="SourceGraphic" in2="noise" scale="48" />
+                        </filter>
+
+                        <filter id="blur">
+                            <feGaussianBlur stdDeviation="0" />
+                        </filter>
+
+                        <mask id="mask2">
+                            <rect width="1000" height="1000" fill="white" />
+                            <polygon id="kjwbef" points="200,200 200,800 800,800 800,200" fill="black" filter="url(#blur)" />
+                        </mask>
+
+                        <mask id="mask">
+                            <rect width="1000" height="1000" fill="white" />
+                            <polygon id="maskpoly_0" points="350,400 600,650 560,320" fill="black" filter="url(#blur)" />
+                        </mask>
+                    </defs>
+
+                    <image class="bg invert_fg" xlink:href="imgs/flowers/flower0.jpg" x="200" y="200" width="600" height="600"></image>
+                    <image class="bg invert_fg" xlink:href="imgs/flowers/flower0.jpg" x="200" y="200" width="600" height="600" filter="url(#noise)"></image>
+                    <image id="optclick" class="fg invert_bg" xlink:href="imgs/f_faces/face0.jpg" x="200" y="200" width="600" height="600" mask="url(#mask)" filter="url()"></image>
+
+                    <rect width="1000" height="1000" style="fill:#ffffe0;" mask="url(#mask2)" />
+
+                    <image id="crsr1" class="dogpoop" onmousedown="selectElement(evt)" xlink:href="imgs/11396.png" transform="matrix(1 0 0 1 -11 -11)" width="22" height="22" x="1800" y="1880"></image>
+
+                    <image xlink:href="fonts/ell.png" transform="translate(-8 -8)" width="800" height="200" x="90" y="30"></image>
+                    <image xlink:href="fonts/cor.png" transform="translate(-8 -8)" width="800" height="200" x="140" y="800"></image>
+                </svg>
+                <div id="clickhandler">&nbsp;</div>
+            </div>
+		</div>
+
+		<div id="description">
+            <blockquote>
+  				STRAP YOURSELF IN BECAUSE THIS TIME AROUND THEY'VE SENT IT UP...
+  				<small>—Pitchfork Review Generator</small>
+  			</blockquote>
+  			<div class="album">
+  				Correct These Deffects
+  			</div>
+  			<div class="artist">
+  				Elliptic Gauss Sum
+  			</div>
+  			<div class="informations">
+  				31.05.2016<br />
+  				1LP vinyl, Digital<br />
+  				CR027<br />
+  			</div>
+  			<div class="tracklist">
+  				A1. Deffected (Original Mix)<br />
+  				A2. A Dog Fart In the Wind (Original Mix)<br />
+  				A3. Wasted Chicks (Original Mix)<br />
+  				<hr />
+                B1. Nut on Her Butt (Original Mix)<br />
+                B2. Deffected (SoundReactor Remix)<br />
+  			</div>
+  			<div class="gallery">
+  				<img src="imgs/cover/01.png" />
+  				<img src="imgs/cover/02.png" />
+  				<img src="imgs/cover/03.png" />
+  				<img src="imgs/cover/04.png" />
+  				<img src="imgs/cover/05.png" />
+  				<img src="imgs/cover/06.png" />
+  			</div>
+  			<div class="cover">
+  				<a href="http://kelianmaissen.com/" target="_blank">ECAL/Kelian Maissen</a>
+  			</div>
+			<div class="production">
+				<img src="imgs/custom_records_white.png" />
+			</div>
+		</div>
+
+		<!-- PAS TOUCHE -->
+
+		<script>
+            setTimeout(function() {
+                document.getElementById('cache').classList.remove('active');
+            }, 2000);
+
+			var generator 		  = document.getElementById('generator'),
+				toggleDescription = document.getElementById('toggleDescription');
+
+			toggleDescription.addEventListener('click', function(e) {
+				e.stopPropagation();
+				document.body.classList.toggle('descriptionOpened');
+			}, false);
+
+			generator.addEventListener('click', function(e) {
+				document.body.classList.remove('descriptionOpened');
+			}, false);
+		</script>
+        <script src="js/main.js"></script>
+	</body>
+</html>

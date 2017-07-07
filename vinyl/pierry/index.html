@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Custom Records" />
+		<meta name="description" content="Custom Records is a label established since 2016 and with a wide variety of genres. Its particularity lies in the unique concept of proposing an editing tool for the cover of each of its releases. This project was made by the Media & Interaction Design students at ECAL/Ecole Cantonale d'Art de Lausanne." />
+		<meta name="keywords" content="custom, records, editing, ecal, tool, cover, vinyl, mid, media, interaction, design" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico" />
+		<link rel="icon" type="image/png" href="imgs/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="imgs/favicon-16x16.png" sizes="16x16" />
+
+		<link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/screen.css" />
+		<!-- VOTRE FEUILLE DE STYLE -->
+		<link rel="stylesheet" type="text/css" href="css/sketch.css" />
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script language="JavaScript" type="text/javascript" src="jquery.min.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+		<title>Exormothecaceae — And of aviation</title>
+	</head>
+
+	<body>
+		<div id="cache" class="active"><div></div></div>
+
+		<a href="../../index.html" id="customRecords" class="invert"><img src="imgs/logotype_black.png" /><img src="imgs/logotype_white.png" /></a>
+
+		<div id="generator">
+			<a href="#" id="toggleDescription" class="invert"></a>
+
+			<!-- ICI VOUS POUVEZ MODIFIER -->
+
+			<!-- <a href="#" id="buy">buy</a> -->
+			<div id="canvasContainer">
+				<!-- votre canvas et autres joyeusetés -->
+				<div id="couche3" data-translationx="0" data-translationy="0" data-rotation="0" data-scalex="1" data-scaley="1"></div>
+				<div id="couche2" data-translationx="0" data-translationy="0" data-rotation="0" data-scalex="1" data-scaley="1"></div>
+				<div id="titre">
+					<img src="imgs/titre.svg">
+					<img id="drag">
+				</div>
+				<div id="couche1" data-translationx="200" data-translationy="200" data-rotation="0" data-scalex="10" data-scaley="10"></div>
+
+				<div class="edges" id="ed1">
+					<div id="cercles">
+						<img id="cercleA" class="cercle" src="imgs/cercle1.svg">
+						<img id="cercleB" class="cercle" src="imgs/cercle2.svg">
+						<img id="cercleC" class="cercle" src="imgs/cercle2.svg">
+						<img id="cart" src="imgs/check.svg">
+					</div>
+				</div>
+
+				<div class="edges" id="ed2"></div>
+				<div class="edges" id="ed3"></div>
+				<div class="edges" id="ed4"></div>
+
+				<script src="js/ui.js"></script>
+			</div>
+		</div>
+
+		<div id="description">
+			<blockquote>
+				No matter what They say. We have all dreamed about becoming a pilot as a child. Exormothecaceae gives us the chance to get high.
+				<small>—New Magazine</small>
+			</blockquote>
+			<div class="album">
+				And of Aviation
+			</div>
+			<div class="artist">
+				Exormothecaceae
+			</div>
+			<div class="informations">
+				28.08.2015<br />
+				2LP vinyl, Digital<br />
+				PJ00231<br />
+			</div>
+			<div class="tracklist">
+				A1. Sound like me<br />
+				A2. Clouds<br />
+				A3. Hurry up<br />
+				<hr />
+				B1. Hell yeah<br />
+				B2. Remember<br />
+				<hr />
+				C1. There is always more<br />
+				C2. Sky is the Limit<br />
+				C3. Burry you<br />
+				<hr />
+				D1. Spin the wheel
+			</div>
+			<div class="gallery">
+				<img src="imgs/cover_1.jpg" />
+				<img src="imgs/cover_2.jpg" />
+				<img src="imgs/cover_3.jpg" />
+				<img src="imgs/cover_5.jpg" />
+				<img src="imgs/cover_6.jpg" />
+				<img src="imgs/cover_4.jpg" />
+			</div>
+			<div class="cover">
+				<a href="http://www.pierryjaquillard.ch/" target="_blank">ECAL/Pierry Jaquillard</a>
+			</div>
+			<div class="production">
+				<img src="imgs/custom_records_white.png" />
+			</div>
+		</div>
+
+		<!-- PAS TOUCHE -->
+
+		<script>
+            setTimeout(function() {
+                document.getElementById('cache').classList.remove('active');
+            }, 2000);
+
+            var generator 		  = document.getElementById('generator'),
+                toggleDescription = document.getElementById('toggleDescription');
+
+            toggleDescription.addEventListener('click', function(e) {
+                e.stopPropagation();
+                document.body.classList.toggle('descriptionOpened');
+            }, false);
+
+            generator.addEventListener('click', function(e) {
+                document.body.classList.remove('descriptionOpened');
+            }, false);
+		</script>
+	</body>
+</html>
